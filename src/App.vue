@@ -47,7 +47,7 @@ export default {
     },
   },
   async created() {
-    const page = await fetch('/sample.json').then(r => r.json());
+    const page = await fetch('sample.json').then(r => r.json());
     this.tuiPage.setPage(page);
     this.tuiPage.setLanguage(this.language);
     this.tuiPage2.setPage(page);

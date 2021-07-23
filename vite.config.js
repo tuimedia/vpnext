@@ -1,13 +1,14 @@
-import vue from '@vitejs/plugin-vue'
+import { defineConfig } from 'vite'
+import createVuePlugin from '@vitejs/plugin-vue'
 
-export default {
+export default defineConfig({
   resolve: {
     alias: {
       vue: '@vue/compat'
     }
   },
   plugins: [
-    vue({
+    createVuePlugin({
       template: {
         compilerOptions: {
           compatConfig: {
@@ -17,4 +18,4 @@ export default {
       }
     })
   ]
-}
+});

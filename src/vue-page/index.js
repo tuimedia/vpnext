@@ -1,4 +1,4 @@
-import { ref, computed } from '@vue/composition-api';
+import { ref, computed } from 'vue';
 import * as editorFunctions from './editor';
 
 export default function usePage({ editable = false } = {}) {

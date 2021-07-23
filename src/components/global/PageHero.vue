@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { defineComponent, inject } from '@vue/composition-api'
+import { defineComponent, inject } from 'vue'
 
 export default defineComponent({
   props: {
@@ -15,6 +15,8 @@ export default defineComponent({
   setup() {
     const page = inject('page');
     const metadata = page.metadata.value;
+
+    console.log('page', page.metadata.value)
 
     return {
       metadata,

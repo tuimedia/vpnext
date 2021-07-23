@@ -1,4 +1,4 @@
-import { isRef } from '@vue/composition-api';
+import { isRef } from 'vue';
 
 const unwrap = page => isRef(page) ? page.value : page;
 

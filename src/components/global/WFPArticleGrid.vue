@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { defineComponent, computed, inject } from '@vue/composition-api'
+import { defineComponent, computed, inject } from 'vue'
 
 export default defineComponent({
   props: {

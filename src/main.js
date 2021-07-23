@@ -1,8 +1,7 @@
-import Vue from 'vue';
+import { createApp } from 'vue'
 import App from './App.vue';
-import VueCompositionAPI from '@vue/composition-api';
 
-Vue.use(VueCompositionAPI);
+const app = createApp(App)
 
 const pageComponents = import.meta.glob('./components/global/*.vue');
 for (const path in pageComponents) {
@@ -11,9 +10,7 @@ for (const path in pageComponents) {
     .pop()
     .split('.')[0];
 
-  Vue.component(componentName, pageComponents[path]);
-}
+    app.component(componentName, pageComponents[path])
+  }
 
-new Vue({
-  render: (h) => h(App),
-}).$mount('#app');
+  app.mount('#app');

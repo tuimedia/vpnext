@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import { defineComponent, provide, readonly } from '@vue/composition-api'
+import { defineComponent, provide, readonly } from 'vue'
 
 export default defineComponent({
   props: {

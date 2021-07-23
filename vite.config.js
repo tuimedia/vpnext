@@ -1,5 +1,20 @@
-const { createVuePlugin } = require('vite-plugin-vue2');
+import vue from '@vitejs/plugin-vue'
 
-module.exports = {
-  plugins: [createVuePlugin()],
-};
+export default {
+  resolve: {
+    alias: {
+      vue: '@vue/compat'
+    }
+  },
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          compatConfig: {
+            MODE: 2
+          }
+        }
+      }
+    })
+  ]
+}

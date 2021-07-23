@@ -20,9 +20,9 @@ export default defineComponent({
     },
   },
   setup(props) {
-    const page = inject('page');
+    const page = inject('TuiPage');
     const blocks = computed(() => {
-      return props.data.blocks.map(id => page.blocks.value[id]);
+      return props.data.blocks.map(id => page.blocks[id]);
     });
 
     return { blocks };

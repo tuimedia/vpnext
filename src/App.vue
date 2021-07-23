@@ -12,7 +12,7 @@
     </ul>
     <h2>What's crappy</h2>
     <ul>
-      <li>It's composition-api, so on the plus side it should work in Vue 3, but on the minus side there's <code>.value</code> crap everywhere</li>
+      <li>I have even less idea how and when to use <code>.value</code> than with @vue/composition-api (it's not in the same places) </li>
     </ul>
     <hr />
     <button @click.prevent="toggleLanguage">Language {{ language }}</button>
@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import { ref, watch } from 'vue';
 import TuiPage from './components/TuiPage.vue';
 import usePage from './vue-page';
 
@@ -34,24 +35,27 @@ export default {
   components: {
     TuiPage,
   },
-  data() {
+  setup(props) {
+    const language = ref('en_GB');
+    const tuiPage = usePage({ editable: true });
+    const tuiPage2 = usePage();
+
+    watch(language, val => tuiPage.setLanguage(val));
+
+    fetch('/sample.json')
+      .then(r => r.json())
+      .then(page => {
+        tuiPage.setPage(page);
+        tuiPage.setLanguage(props.language);
+        tuiPage2.setPage(page);
+        tuiPage2.setLanguage('en_GB');
+      });
+
     return {
-      tuiPage: usePage({ editable: true }),
-      tuiPage2: usePage(),
-      language: 'en_GB',
+      tuiPage,
+      tuiPage2,
+      language,
     };
-  },
-  watch: {
-    language(val) {
-      this.tuiPage.setLanguage(val);
-    },
-  },
-  async created() {
-    const page = await fetch('/sample.json').then(r => r.json());
-    this.tuiPage.setPage(page);
-    this.tuiPage.setLanguage(this.language);
-    this.tuiPage2.setPage(page);
-    this.tuiPage2.setLanguage('en_GB');
   },
   methods: {
     toggleLanguage() {

@@ -20,7 +20,7 @@ export default defineComponent({
     },
   },
   setup(props) {
-    provide('page', readonly(props.data));
+    provide('TuiPage', readonly(props.data));
 
     return {
       rows: props.data.rows,

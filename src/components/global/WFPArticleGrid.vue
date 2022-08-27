@@ -1,31 +1,18 @@
 <template>
   <div>
-    <component
-      v-for="block in blocks"
-      :key="block.id"
-      :is="block.component"
-      :data="block"
-    />
+    <component v-for="block in blocks" :key="block.id" :is="block.component" :data="block" />
   </div>
 </template>
 
-<script>
-import { defineComponent, computed, inject } from 'vue'
+<script setup lang="ts">
+import { computed, inject } from 'vue';
 
-export default defineComponent({
-  props: {
-    data: {
-      type: Object,
-      required: true,
-    },
-  },
-  setup(props) {
-    const page = inject('TuiPage');
-    const blocks = computed(() => {
-      return props.data.blocks.map(id => page.blocks[id]);
-    });
+const props = defineProps<{
+  data: object;
+}>();
 
-    return { blocks };
-  },
-})
+const page = inject('TuiPage');
+const blocks = computed(() => {
+  return props.data.blocks.map((id) => page.blocks[id]);
+});
 </script>

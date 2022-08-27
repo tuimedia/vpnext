@@ -1,6 +1,6 @@
 import { isRef } from 'vue';
 
-const unwrap = page => isRef(page) ? page.value : page;
+const unwrap = (page) => (isRef(page) ? page.value : page);
 
 export function addBlock(pageRef, block) {
   const page = unwrap(pageRef);

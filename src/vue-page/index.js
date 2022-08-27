@@ -15,9 +15,9 @@ export default function usePage({ editable = false } = {}) {
 
   const blocks = computed(() => {
     const translatedBlocks = {};
-    Object.keys(page.value?.pageData?.content?.blocks || {}).forEach(id => {
+    Object.keys(page.value?.pageData?.content?.blocks || {}).forEach((id) => {
       translatedBlocks[id] = translateBlock(id);
-    })
+    });
 
     return translatedBlocks;
   });
@@ -28,7 +28,9 @@ export default function usePage({ editable = false } = {}) {
     ...page.value.pageData.content.langData[language.value]?.metadata,
   }));
 
-  const rows = computed(() => (page.value?.pageData?.content?.layout || []).map(id => blocks.value[id]));
+  const rows = computed(() =>
+    (page.value?.pageData?.content?.layout || []).map((id) => blocks.value[id]),
+  );
 
   function setPage(value) {
     // TODO: check schemaVersion
@@ -39,7 +41,10 @@ export default function usePage({ editable = false } = {}) {
     language.value = value;
   }
 
-  const partial = (fn, ...a) => (...b) => fn(...a, ...b);
+  const partial =
+    (fn, ...a) =>
+    (...b) =>
+      fn(...a, ...b);
 
   return {
     blocks,
@@ -50,11 +55,11 @@ export default function usePage({ editable = false } = {}) {
     setPage,
     setLanguage,
     // Add an editor object if the editable option is set, providing the page as the first argument to each function
-    ...editable && {
-        editor: Object.keys(editorFunctions).reduce((editor, functionName) => {
+    ...(editable && {
+      editor: Object.keys(editorFunctions).reduce((editor, functionName) => {
         editor[functionName] = partial(editorFunctions[functionName], page);
         return editor;
       }, {}),
-    },
+    }),
   };
 }

@@ -1,16 +1,17 @@
+<script setup lang="ts">
+const props = defineProps<{
+  data: object;
+}>();
+</script>
+
 <template>
   <div>
-    <component v-if="data.title.length" :is="data.titleLevel === 'tertiary' ? 'h3' : 'h2'" v-text="data.title" />
-    <div v-html="data.copy"/>
+    <component
+      v-if="props.data.title.length"
+      :is="props.data.titleLevel === 'tertiary' ? 'h3' : 'h2'"
+      >{{ props.data.title }}</component
+    >
+
+    <div v-html="props.data.copy" />
   </div>
 </template>
-
-<script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  props: {
-    data: { type: Object, required: true }
-  },
-})
-</script>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { TuiPageKey } from '../../vue-page';
 import { inject } from 'vue';
-import type { InjectedTuiPage, TuiPageBlock } from '../../vue-page';
+import { TuiPageKey, type InjectedTuiPage, type TuiPageBlock } from '../../vue-page';
 
 const props = defineProps<{
   data: TuiPageBlock;

@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
-import type { Ref } from 'vue';
+import { ref, type Ref } from 'vue';
 import type { TuiPageBlock, TuiPageData } from './vue-page';
 import TuiPage from './components/TuiPage.vue';
 

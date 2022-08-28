@@ -7,13 +7,13 @@ const language = ref('en_GB');
 const tuiPage: Ref<TuiPageData | null> = ref(null);
 const tuiPage2: Ref<TuiPageData | null> = ref(null);
 
-fetch('/sample4.json')
+fetch(`${import.meta.env.BASE_URL}sample4.json`)
   .then((r) => r.json())
   .then((page) => {
     tuiPage.value = page;
   });
 
-fetch('/sample5.json')
+fetch(`${import.meta.env.BASE_URL}sample5.json`)
   .then((r) => r.json())
   .then((page) => {
     tuiPage2.value = page;

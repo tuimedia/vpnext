@@ -1,0 +1,160 @@
+{
+  "id": "414a8d88-c420-11e9-945c-029e4c981cb0",
+  "slug": "prepare-your-partner-to-move-to-a-duty-station",
+  "state": "live",
+  "pageData": {
+    "revision": "b929efed-e5d3-11e9-a3a9-029e4c981cb0",
+    "previousRevision": "b886ca1b-e5cb-11e9-a3a9-029e4c981cb0",
+    "defaultLanguage": "en",
+    "availableLanguages": [
+      "en",
+      "es"
+    ],
+    "created": "2019-10-03T12:48:31+01:00",
+    "content": {
+      "blocks": {
+        "w-t0KTxTgndZ": {
+          "id": "w-t0KTxTgndZ",
+          "component": "PageHero",
+          "children": [],
+          "data": {
+            "heroImage": "",
+            "heroType": "image",
+            "mapUrl": ""
+          },
+          "strings": {
+            "en": {
+              "title": " How to prepare your partner and family for the move",
+              "copy": "<p>Adipisicing duis enim labore ullamco et magna ea minim dolor. Tempor quis nostrud sint reprehenderit ad velit dolore nostrud fugiat. Consectetur ut labore irure commodo. Dolor consequat in dolor culpa veniam sint fugiat ullamco deserunt do consequat occaecat laborum sint.</p>"
+            },
+            "es": {
+              "title": "Cómo preparar a tu pareja y familia para la mudanza",
+              "copy": "<p>Adipisicing duis enim labore ullamco et magna ea minim dolor. Tempor quis nostrud sint reprehenderit ad velit dolore nostrud fugiat. Consectetur ut labore irure commodo. Dolor consequat in dolor culpa veniam sint fugiat ullamco deserunt do consequat occaecat laborum sint.</p>"
+            }
+          }
+        },
+        "sV2aRKAYF-3g": {
+          "id": "sV2aRKAYF-3g",
+          "component": "PageText",
+          "children": [],
+          "data": {
+            "titleLevel": "tertiary"
+          },
+          "strings": {
+            "en": {
+              "title": "",
+              "copy": "<h3>It's all about communication</h3><p>The key to any good relationship is communication and this is especially true when considering a move.  </p>"
+            },
+            "es": {
+              "copy": "<h3>Todo es cuestión de comunicación</h3><p>La comunicación es la clave de cualquier buena relación y esto es especialmente cierto a la hora de considerar una mudanza.  </p>"
+            }
+          }
+        },
+        "In7TfBEFaPsC": {
+          "id": "In7TfBEFaPsC",
+          "component": "PageText",
+          "children": [],
+          "data": {
+            "titleLevel": "tertiary"
+          },
+          "strings": {
+            "en": {
+              "title": "",
+              "copy": "<h3>Choices</h3><ul><li><p>Whether this is your first move or your tenth move, involve the family in as many decisions as possible: </p></li><li><p>What kind of school do the kids want to attend? Show them the websites and involve them in the choice.</p></li><li><p>What type of housing would work well for your family? Get them to help with the search for housing. </p></li><li><p>What important items do they want to bring with them to the new location?</p></li><li><p>Closure and saying goodbye is always important - ask your partner and kids how they want to say goodbye to their friends, and importantly how they can stay connected to them. </p></li><li><p>Keep checking in with them and keep the lines of communication open. </p></li></ul>"
+            },
+            "es": {
+              "copy": "<h3>Elecciones</h3><ul><li><p>Ya sea la primera o la décima mudanza, haz participar a tu familia en todas las decisiones posibles: </p></li><p>¿A qué tipo de colegio quieren ir los niños? Enséñales las páginas web y hazlos sentir parte de la elección.</p></li><li>¿Qué tipo de vivienda le vendría bien a tu familia? Pídeles que te ayuden a buscar una casa. </p></li><p>¿Qué objetos importantes quieren llevarse al nuevo lugar?</p></li><p>Los últimos días y la despedida siempre son importantes: pregúntale a tu pareja y a tus hijos cómo quieren despedirse de sus amigos y, sobre todo, cómo pueden seguir en contacto con ellos. </p></li><p>Pregúntales cómo se sienten y mantén las líneas de comunicación abiertas. </p></li></ul> <p>"
+            }
+          }
+        },
+        "B35JPGbWA43V": {
+          "id": "B35JPGbWA43V",
+          "component": "PageText",
+          "children": [],
+          "data": {
+            "titleLevel": "tertiary"
+          },
+          "strings": {
+            "en": {
+              "title": "",
+              "copy": "<h3>Get them excited</h3><ul><li><p>Your family will be apprehensive and will probably tell you they are worried about moving. When speaking to your kids acknowledge that moving is difficult and accept that children rarely want to move, but the good news is kids usually adapt far better than adults. It is important to allow them the chance the voice their concerns. </p></li><li><p>What are the opportunities to travel in the country? What types of attractions are close by?</p></li><li><p>What types of food are available? Is it possible to find a local restaurant that serves the food where you are moving?</p></li><li><p>Talk to people who already live there - schools can put you in contact with families, or maybe you have colleagues who are already stationed there that your kids and family can talk to about what it's like in that city. </p></li><li><p>Google as much as you can about the new duty station to anticipate questions they may have, and better, research the city and country with them. </p></li></ul>"
+            },
+            "es": {
+              "copy": "<h3>Intenta generar entusiasmo</h3><ul><li><p>Tu familia se sentirá aprensiva y probablemente te dirá que está preocupada por la mudanza. Cuando hables con tus hijos, reconoce que la mudanza es difícil y acepta que los niños no suelen querer mudarse, pero la buena noticia es que los niños suelen adaptarse mucho mejor que los adultos. Es importante darles la oportunidad de expresar sus preocupaciones. </p></li><li>¿Cuáles son las posibilidades de viajar por el país? ¿Qué tipos de atracciones hay cerca?</p></li><li>¿Qué tipos de comida hay? ¿Es posible encontrar un restaurante local que sirva la comida del lugar al que se van a trasladar?</p></li><li>Habla con personas que ya vivan allí: las escuelas pueden ponerle en contacto con familias, o tal vez tenga colegas que ya estén destinados allí con los que sus hijos y su familia puedan hablar sobre cómo es esa ciudad. </p></li><li>Busca en Google todo lo que puedas sobre el nuevo lugar de destino para anticiparte a las preguntas que puedan tener, y mejor, investiga la ciudad y el país con ellos.</p></li></ul>"
+            }
+          }
+        },
+        "jbwsjRzcOy3r": {
+          "id": "jbwsjRzcOy3r",
+          "component": "PageText",
+          "children": [],
+          "data": {
+            "titleLevel": "tertiary"
+          },
+          "strings": {
+            "en": {
+              "title": "",
+              "copy": "<h3>Start preparing early</h3><p>Whether you are moving to a new city in your country or moving to a different country, there are many details that need to arranged - get started early. Here are just a few things to consider:</p><ul><li><p>Utilities need to be shut off, and new services connected. </p></li><li><p>What moving company are you going to use?</p></li><li><p>What do you need to do with your cars? Store them? Sell them? Transport them? What are the procedures involved?</p></li><li><p>When do you give up your current residence and when do you take possession of your new accommodation? Is there a period of time where you need to find temporary accommodation? </p></li><li><p>If you are shipping a pet what are the rules around vet certificates? Some airlines won't transport some types of dogs; there are regulations around dog crates; some airlines won't fly a pet if it is above 30C; some require a pet passport. Do your homework early if you are taking pets with you. </p></li><li><p>Are your passports updated and valid for longer than 6 months?</p></li><li><p>Do you have a house you are going to rent? There is much to be done before renting a home....</p></li><li><p>Is your drivers license valid where you are going?</p></li><li><p>Can you use your debit card in your new country? How much cash are you going to bring?</p></li><li><p>Schools require deposits and many have deadlines for registration. </p></li><li><p>When is it best to have our articles moved? There is usually at least a 4 week period between when the movers come and when your shipment arrives- you need beds to sleep on and clothes to wear so plan accordingly. </p></li></ul>"
+            },
+            "es": {
+              "copy": "<h3>Empieza las preparaciones con tiempo</h3><p>Ya sea que te estés mudando a una nueva ciudad en su país o que te estés mudando a un país diferente, hay muchos detalles que deben resolverse. Empieza con tiempo. He aquí algunas cosas que hay que tener en cuenta:</p><ul><li><p>Hay que dar de baja los servicios y contratar los nuevos. </p></li><li>¿Qué compañía de mudanzas vas a utilizar?</p></li><p>¿Qué vas a hacer con tus coches? ¿Guardarlos? ¿Venderlos? ¿Transportarlos? ¿Cuáles son los trámites? </p></li><li>¿Cuándo te vas de tu residencia actual y cuándo tomas posesión de tu nuevo alojamiento? ¿Hay algún periodo de tiempo en el que necesites un alojamiento temporal? </p></li><p>Si vas a transportar una mascota, ¿cuáles son las normas relativas a los certificados veterinarios? Algunas aerolíneas no transportan algunos tipos de perros; hay normas sobre las jaulas para perros; algunas aerolíneas no transportan mascotas si la temperatura es superior a 30ºC; algunas exigen un pasaporte para mascotas. Haz tus deberes con antelación si vas a llevar animales de compañía. </p></li><li><p>¿Tus pasaportes están actualizados y tienen una validez mayor a 6 meses?</p></li><li><p>¿Vas a alquilar tu casa? Hay mucho que hacer antes de alquilar una casa....</p></li><li><p>Tu carnet de conducir, ¿es válido en el nuevo destino?</p></li><p>¿Puedes usar tu tarjeta de débito en el nuevo país? ¿Cuánto dinero en efectivo vas a llevar?</p></li><li>Las escuelas exigen depósitos y muchas tienen plazos de inscripción. </p></li><p>¿Cuándo es mejor trasladar nuestros artículos? Por lo general, hay al menos un período de 4 semanas entre el momento en que la compañía de mudanza va a tu casa y llega al nuevo destino: necesitarás camas para dormir y ropa. Por estos motivos, debes hacer las planificaciones necesarias.</p></li></ul>"
+            }
+          }
+        },
+        "l_K1s1ggMG8f": {
+          "id": "l_K1s1ggMG8f",
+          "component": "WFPArticleGrid",
+          "children": [
+            "w-t0KTxTgndZ",
+            "sV2aRKAYF-3g",
+            "In7TfBEFaPsC",
+            "B35JPGbWA43V",
+            "jbwsjRzcOy3r"
+          ],
+          "data": {},
+          "strings": {}
+        }
+      },
+      "layout": [
+        "l_K1s1ggMG8f"
+      ],
+      "schemaVersion": 4
+    },
+    "metadata": {
+      "data": {
+        "thumbnail": "https://unwfp.imgix.net/htbe/uploads/f2510d343d42cfc07113b3e93494e453efa13d0f.jpg",
+        "type": "article",
+        "accessRole": "ROLE_USER",
+        "cardStyle": "textImage",
+        "showRelated": true,
+        "spludge": "https://unwfp.imgix.net/htbe/uploads/a6cfa689457ca5d2ed132fd43e55ea454bfd2d39.png",
+        "isDutyStation": false,
+        "heroImage": "https://unwfp.imgix.net/htbe/uploads/5ce1345bbba85e95ccd2ba1f594a6d4ef23d86df.jpg",
+        "blendImage": "https://unwfp.imgix.net/htbe/uploads/92d942dceb0674071ec71e2eec77cdef80c20ad0.png",
+        "imgixParams": ""
+      },
+      "strings": {
+        "en": {
+          "title": "How to prepare your partner to move to a new Duty Station",
+          "intro": "",
+          "standfirst": ""
+        },
+        "es": {
+          "title": "Cómo preparar a tu pareja para el traslado a un nuevo lugar de trabajo"
+        }
+      }
+    }
+  },
+  "tagData": [
+    {
+      "id": "d33261ab-fb96-443b-ac4d-d6bc350dd1a9",
+      "title": "Family Pages",
+      "slug": "family-pages",
+      "type": "family-pages",
+      "data": {
+        "colour": "#C1DAECFF",
+        "blendImage": "https://unwfp.imgix.net/htbe/uploads/5f78edb4ebb5b3e3f480b73d9bab6c435815de3e.png"
+      }
+    }
+  ]
+}

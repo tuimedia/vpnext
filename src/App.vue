@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, type Ref } from 'vue';
 import type { TuiPageBlock, TuiPageData } from './vue-page';
-import TuiPage from './components/TuiPage.vue';
 
 const uid = () => Date.now().toString(36) + Math.random().toString(36).substring(2);
 const language = ref('en_GB');

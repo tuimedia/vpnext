@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, provide } from 'vue';
-import { TuiPageKey, useTuiPage } from '../vue-page';
-import type { TuiPageData } from '../vue-page';
+import { TuiPageKey, useTuiPage } from './tuipage';
+import type { TuiPageData } from '../types';
 import type { WritableComputedRef } from 'vue';
 
 const $emit = defineEmits(['update:lang', 'update:page']);

@@ -8,9 +8,10 @@ const props = defineProps<{
 
 const TuiPage = inject(TuiPageKey) as InjectedTuiPage;
 const strings = TuiPage.translateBlockStrings(props.data);
+const metadata = TuiPage.translateMetadata();
 const heroImage = computed(
   () =>
-    `url(${TuiPage.page.value.pageData.metadata.data.heroImage}?auto=format,compress&w=1600&h=600&fit=crop&crop=faces,edges)`,
+    `url(${metadata.value.heroImage}?auto=format,compress&w=1600&h=600&fit=crop&crop=faces,edges)`,
 );
 
 function toggleLanguage() {

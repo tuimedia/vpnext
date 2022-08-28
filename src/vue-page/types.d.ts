@@ -4,6 +4,7 @@ export interface InjectedTuiPage {
   page: Ref<TuiPageData>;
   language: Ref<string>;
   translateBlockStrings: (block: TuiPageBlock) => ComputedRef<TuiPageStrings>;
+  translateMetadata: () => ComputedRef<TuiPageStrings>;
 }
 
 export interface TuiPageData {

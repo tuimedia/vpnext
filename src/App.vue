@@ -82,6 +82,7 @@ function addBlock() {
       <li>No one understands it yet</li>
       <li>It's quite different from before</li>
       <li>It's not <em>much</em> less complex</li>
+      <li>There's no tuimedia/page-bundle support for schemaVersion 4 yet</li>
     </ul>
     <hr />
     <button @click.prevent="toggleLanguage">Language {{ language }}</button>

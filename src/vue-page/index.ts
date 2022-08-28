@@ -14,6 +14,7 @@ export type {
 export {
   createPage,
   translateBlockStrings,
+  translateMetadata,
   useTuiPage,
   TuiPageKey,
 } from './src/tuipage';

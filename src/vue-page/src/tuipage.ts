@@ -24,6 +24,20 @@ export function translateBlockStrings(
   return strings;
 }
 
+export function translateMetadata(
+  metadata: TuiPageMetadata,
+  lang: string,
+  fallbackLang = 'en',
+): TuiPageStrings & TuiPageDataStore {
+  const data = Object.create(null);
+  Object.assign(data, metadata.data);
+  Object.assign(data, metadata.strings[fallbackLang]);
+  if (fallbackLang !== lang) {
+    Object.assign(data, metadata.strings[lang]);
+  }
+  return data;
+}
+
 export function useTuiPage(page: Ref<TuiPageData>, language: Ref<string>): InjectedTuiPage {
   return {
     page,
@@ -31,6 +45,15 @@ export function useTuiPage(page: Ref<TuiPageData>, language: Ref<string>): Injec
     translateBlockStrings(block: TuiPageBlock): ComputedRef<TuiPageStrings> {
       return computed(() =>
         translateBlockStrings(block, language.value, page.value.pageData.defaultLanguage),
+      );
+    },
+    translateMetadata(): ComputedRef<TuiPageStrings> {
+      return computed(() =>
+        translateMetadata(
+          page.value.pageData.metadata,
+          language.value,
+          page.value.pageData.defaultLanguage,
+        ),
       );
     },
   };

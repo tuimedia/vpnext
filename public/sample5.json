@@ -64,21 +64,12 @@
               "copy": "<p>Knight Rider, un vuelo sombrío al peligroso mundo de un hombre que no existe. Michael Knight, un joven solitario en una cruzada para defender la causa de los inocentes, los indefensos en un mundo de criminales que operan por encima de la ley.</p>"
             }
           }
-        },
-        "l_K1s1ggMG8f": {
-          "id": "l_K1s1ggMG8f",
-          "component": "WFPArticleGrid",
-          "children": [
-            "w-t0KTxTgndZ",
-            "O67clsu1riF1",
-            "sV2aRKAYF-3g"
-          ],
-          "data": {},
-          "strings": {}
         }
       },
       "layout": [
-        "l_K1s1ggMG8f"
+        "w-t0KTxTgndZ",
+        "O67clsu1riF1",
+        "sV2aRKAYF-3g"
       ],
       "schemaVersion": 4
     },

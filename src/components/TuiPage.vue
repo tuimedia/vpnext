@@ -2,15 +2,31 @@
 import { computed, provide } from 'vue';
 import { TuiPageKey, useTuiPage } from '../vue-page';
 import type { TuiPageData } from '../vue-page';
-import type { ComputedRef } from 'vue';
+import type { WritableComputedRef } from 'vue';
+
+const $emit = defineEmits(['update:lang', 'update:page']);
 
 const props = defineProps<{
   page: TuiPageData;
   lang: string;
 }>();
 
-const page: ComputedRef<TuiPageData> = computed(() => props.page);
-const lang: ComputedRef<string> = computed(() => props.lang);
+const page: WritableComputedRef<TuiPageData> = computed({
+  get() {
+    return props.page;
+  },
+  set(val) {
+    $emit('update:page', val);
+  },
+});
+const lang: WritableComputedRef<string> = computed({
+  get() {
+    return props.lang;
+  },
+  set(val) {
+    $emit('update:lang', val);
+  },
+});
 
 const TuiPage = useTuiPage(page, lang);
 provide(TuiPageKey, TuiPage);

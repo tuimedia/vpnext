@@ -13,11 +13,16 @@ const heroImage = computed(
   () =>
     `url(${TuiPage.page.value.pageData.metadata.data.heroImage}?auto=format,compress&w=1600&h=600&fit=crop&crop=faces,edges)`,
 );
+
+function toggleLanguage() {
+  TuiPage.language.value = TuiPage.language.value === 'en_GB' ? 'es' : 'en_GB';
+}
 </script>
 
 <template>
   <div class="hero">
     <h1>{{ strings.title }}</h1>
+    <button @click="toggleLanguage">Toggle language</button>
   </div>
 </template>
 

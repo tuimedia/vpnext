@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { Ref } from 'vue';
-import type { TuiPageData } from './vue-page';
+import type { TuiPageBlock, TuiPageData } from './vue-page';
 import TuiPage from './components/TuiPage.vue';
 
-// const uid = () => Date.now().toString(36) + Math.random().toString(36).substring(2);
+const uid = () => Date.now().toString(36) + Math.random().toString(36).substring(2);
 const language = ref('en_GB');
 const tuiPage: Ref<TuiPageData | null> = ref(null);
 const tuiPage2: Ref<TuiPageData | null> = ref(null);
-
-// SHOULD I USEPAGE HERE, OR ARE WE JUST DOING IT IN THE COMPONENTS?
 
 fetch('/sample4.json')
   .then((r) => r.json())
@@ -28,24 +26,27 @@ function toggleLanguage() {
 }
 
 function addBlock() {
-  // const editor = tuiPage.value.editor;
-  // const row = tuiPage.value.rows.value[0];
-  // const block = {
-  //   id: uid(),
-  //   component: 'PageText',
-  //   languages: tuiPage.value.page.value.pageData.availableLanguages,
-  // };
-  // const langData = {
-  //   title: '',
-  //   copy: `${block.id} Esse sit excepteur consequat labore amet magna officia occaecat adipisicing reprehenderit eu magna aliqua. Consectetur sunt irure eu aliqua adipisicing aliquip. Exercitation in ipsum cillum anim. Aute in incididunt labore incididunt excepteur consectetur ipsum. Ad id adipisicing tempor tempor dolore incididunt. Nisi eu minim sunt id proident enim ex non incididunt. Lorem sit aliqua irure excepteur aliqua sit est minim adipisicing consequat laborum est non ut.`,
-  // };
-  // editor.setBlockData({ id: block.id, value: block });
-  // editor.setBlockLangData({
-  //   language: 'en_GB',
-  //   id: block.id,
-  //   value: langData,
-  // });
-  // editor.setBlockData({ id: row.id, key: 'blocks', value: [...row.blocks, block.id] });
+  if (!tuiPage?.value) {
+    return;
+  }
+  const blockId = uid();
+  const block: TuiPageBlock = {
+    id: blockId,
+    component: 'PageText',
+    children: [],
+    data: {
+      titleLevel: 'secondary',
+    },
+    strings: {
+      en: {
+        title: '',
+        copy: `${blockId} Esse sit excepteur consequat labore amet magna officia occaecat adipisicing reprehenderit eu magna aliqua. Consectetur sunt irure eu aliqua adipisicing aliquip. Exercitation in ipsum cillum anim. Aute in incididunt labore incididunt excepteur consectetur ipsum. Ad id adipisicing tempor tempor dolore incididunt. Nisi eu minim sunt id proident enim ex non incididunt. Lorem sit aliqua irure excepteur aliqua sit est minim adipisicing consequat laborum est non ut.`,
+      },
+    },
+  };
+
+  tuiPage.value.pageData.content.blocks[blockId] = block;
+  tuiPage.value.pageData.content.layout.push(blockId);
 }
 </script>
 
@@ -56,43 +57,40 @@ function addBlock() {
       <li>This is a proof of concept of a vuex-less version of @tuimedia/vue-page</li>
       <li>
         This uses schemaVersion 4; a CLI node script is provided to convert from v2. V4 has
-        typescript definitions and keeps each block and its strings together. Metadata is split into
-        data and strings objects. Blocks have a consistent definition, with "data" and "strings"
-        objects for custom data.
+        typescript definitions instead of JSON Schema. It keeps each block and its strings together.
+        Metadata is split into data and strings objects. Blocks have a consistent definition, with
+        "data" and "strings" objects for custom data.
       </li>
       <li>Two TuiPage components on the same page, each with its own state</li>
-      <!-- <li>Editor functionality only added on demand (<code>{ editable: true }</code>)</li> -->
-      <!-- <li>
-        Editor functions can be imported separately and mutate a plain page object or ref, so you
-        could call these from vuex mutations if you want, or modify a page object without setting up
-        a TuiPage
-      </li> -->
-      <!-- <li>
-        TuiPage object <code>provide</code>d into component tree by the TuiPage tag, can be
-        <code>inject</code>ed into child components when access is needed to metadata, the page
+      <li>
+        TuiPage convenience object <code>provide</code>d into component tree by the TuiPage tag, can
+        be <code>inject</code>ed into child components when access is needed to metadata, the page
         object, etc
-      </li> -->
-      <li>Typescript types provided</li>
-      <li>
-        Page object and language provided into the component hierarchy… convenience object would
-        probably be better
       </li>
-      <!-- <li>The normal vue-page features: e.g. language switching, fallback to default language</li> -->
+      <li>Typescript types provided</li>
+      <li>The normal vue-page features: e.g. language switching, fallback to default language</li>
       <li>
-        Storing page state is now your business, not the TuiPage component's. You could keep it in
-        vuex if you wanted.
+        Thanks to Vue 3's proxy-based reactivity, can just edit the page object directly without the
+        bothersome editor functions. Keeping strings within the block also makes editing more
+        straightforward.
+      </li>
+      <li>
+        Storing page state is now your business, not the TuiPage component's. You could still keep
+        it in vuex if you wanted.
       </li>
     </ul>
     <h2>What's crappy</h2>
     <ul>
-      <li></li>
+      <li>No one understands it yet</li>
+      <li>It's quite different from before</li>
+      <li>It's not <em>much</em> less complex</li>
     </ul>
     <hr />
     <button @click.prevent="toggleLanguage">Language {{ language }}</button>
     <button @click.prevent="addBlock">Add block</button>
     <div :class="$style.twoup">
-      <TuiPage v-if="tuiPage" :page="tuiPage" :lang="language" />
-      <TuiPage v-if="tuiPage2" :page="tuiPage2" :lang="language" />
+      <TuiPage v-if="tuiPage" v-model:page="tuiPage" v-model:lang="language" />
+      <TuiPage v-if="tuiPage2" v-model:page="tuiPage2" v-model:lang="language" />
     </div>
   </div>
 </template>

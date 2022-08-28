@@ -6,13 +6,15 @@
 
 <script setup lang="ts">
 import { computed, inject } from 'vue';
+import { TuiPageKey } from '../../vue-page';
+import type { InjectedTuiPage, TuiPageBlock } from '../../vue-page';
 
 const props = defineProps<{
-  data: object;
+  data: TuiPageBlock;
 }>();
 
-const page = inject('TuiPage');
-const blocks = computed(() => {
-  return props.data.blocks.map((id) => page.blocks[id]);
-});
+const TuiPage = inject(TuiPageKey) as InjectedTuiPage;
+const blocks = computed(() =>
+  props.data.children.map((id) => TuiPage.page.value.pageData.content.blocks[id]),
+);
 </script>

@@ -1,15 +1,16 @@
-import { createApp, defineAsyncComponent } from 'vue';
+import { createApp, defineAsyncComponent, type AsyncComponentLoader } from 'vue';
 import App from './App.vue';
 
 import './assets/main.css';
 
-const pageComponents = import.meta.glob('./components/global/*.vue');
 const app = createApp(App);
 
+const pageComponents = import.meta.glob('./components/global/*.vue');
 for (const path in pageComponents) {
-  const componentName = path.split('/').pop().split('.')[0];
+  const componentFilename = path.split('/').pop() as string;
+  const componentName = componentFilename.split('.')[0];
 
-  app.component(componentName, defineAsyncComponent(pageComponents[path]));
+  app.component(componentName, defineAsyncComponent(pageComponents[path] as AsyncComponentLoader));
 }
 
 app.mount('#app');

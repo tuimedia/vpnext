@@ -1,16 +1,27 @@
 <script setup lang="ts">
-import { provide, readonly, ref } from 'vue';
+import { computed, provide } from 'vue';
+import { TuiPageKey, useTuiPage } from '../vue-page';
+import type { TuiPageData } from '../vue-page';
+import type { ComputedRef } from 'vue';
 
 const props = defineProps<{
-  data: object;
+  page: TuiPageData;
+  lang: string;
 }>();
 
-provide('TuiPage', readonly(props.data));
-const rows = ref(props.data.rows);
+const page: ComputedRef<TuiPageData> = computed(() => props.page);
+const lang: ComputedRef<string> = computed(() => props.lang);
+
+const TuiPage = useTuiPage(page, lang);
+provide(TuiPageKey, TuiPage);
+
+const blocks = computed(() =>
+  page.value.pageData.content.layout.map((id) => page.value.pageData.content.blocks[id]),
+);
 </script>
 
 <template>
   <article>
-    <component v-for="block in rows" :key="block.id" :is="block.component" :data="block" />
+    <component v-for="block in blocks" :key="block.id" :is="block.component" :data="block" />
   </article>
 </template>

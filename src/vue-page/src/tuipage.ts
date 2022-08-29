@@ -38,7 +38,10 @@ export function translateMetadata(
   return data;
 }
 
-export function useTuiPage(page: Ref<TuiPageData>, language: Ref<string>): InjectedTuiPage {
+export function createInjectedTuiPage(
+  page: Ref<TuiPageData>,
+  language: Ref<string>,
+): InjectedTuiPage {
   return {
     page,
     language,

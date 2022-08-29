@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, provide } from 'vue';
-import { TuiPageKey, useTuiPage } from './tuipage';
+import { TuiPageKey, createInjectedTuiPage } from './tuipage';
 import type { TuiPageData } from '../types';
 import type { WritableComputedRef } from 'vue';
 
@@ -28,7 +28,7 @@ const lang: WritableComputedRef<string> = computed({
   },
 });
 
-const TuiPage = useTuiPage(page, lang);
+const TuiPage = createInjectedTuiPage(page, lang);
 provide(TuiPageKey, TuiPage);
 
 const blocks = computed(() =>

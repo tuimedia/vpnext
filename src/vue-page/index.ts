@@ -15,7 +15,7 @@ export {
   createPage,
   translateBlockStrings,
   translateMetadata,
-  useTuiPage,
+  createInjectedTuiPage,
   TuiPageKey,
 } from './src/tuipage';
 

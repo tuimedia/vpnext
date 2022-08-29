@@ -6,16 +6,30 @@ const props = defineProps<{
   data: TuiPageBlock;
 }>();
 
+/* The "as InjectedTuiPage" here is because otherwise the type would be
+ * <InjectedTuiPage|null>. That would be true if you ever used this component
+ * outside of a TuiPage component tree, but inside it, it's always set
+ */
 const TuiPage = inject(TuiPageKey) as InjectedTuiPage;
+
+// Get the strings for the currently selected language, with fallback to default
 const strings = TuiPage.translateBlockStrings(props.data);
+
+// Get the metadata + metadata strings for the currently selected language, with fallback to default
 const metadata = TuiPage.translateMetadata();
+
+// Use it
 const heroImage = computed(
   () =>
     `url(${metadata.value.heroImage}?auto=format,compress&w=1600&h=600&fit=crop&crop=faces,edges)`,
 );
 
+/* Demonstrate modifying the global language from within the component tree
+ * Note: this only works if the <TuiPage> parent tag uses v-model:lang, because
+ * the language value is originally a read-only prop, so we must emit changes.
+ */
 function toggleLanguage() {
-  TuiPage.language.value = TuiPage.language.value === 'en_GB' ? 'es' : 'en_GB';
+  TuiPage.language.value = TuiPage.language.value === 'en' ? 'es' : 'en';
 }
 </script>
 

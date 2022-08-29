@@ -2,27 +2,30 @@
 import { ref, type Ref } from 'vue';
 import type { TuiPageBlock, TuiPageData } from './vue-page';
 
-const uid = () => Date.now().toString(36) + Math.random().toString(36).substring(2);
-const language = ref('en_GB');
-const tuiPage: Ref<TuiPageData | null> = ref(null);
-const tuiPage2: Ref<TuiPageData | null> = ref(null);
+const language = ref('en');
 
+// Create a page reference and load some data into it
+const tuiPage: Ref<TuiPageData | null> = ref(null);
 fetch(`${import.meta.env.BASE_URL}sample4.json`)
   .then((r) => r.json())
   .then((page) => {
     tuiPage.value = page;
   });
 
+// Create a page reference and load some data into it
+const tuiPage2: Ref<TuiPageData | null> = ref(null);
 fetch(`${import.meta.env.BASE_URL}sample5.json`)
   .then((r) => r.json())
   .then((page) => {
     tuiPage2.value = page;
   });
 
+// Demo stuff to test reactivity: toggle language, add a block
 function toggleLanguage() {
-  language.value = language.value === 'en_GB' ? 'es' : 'en_GB';
+  language.value = language.value === 'en' ? 'es' : 'en';
 }
 
+const uid = () => Date.now().toString(36) + Math.random().toString(36).substring(2);
 function addBlock() {
   if (!tuiPage?.value) {
     return;
@@ -88,6 +91,11 @@ function addBlock() {
     <button @click.prevent="toggleLanguage">Language {{ language }}</button>
     <button @click.prevent="addBlock">Add block</button>
     <div :class="$style.twoup">
+      <!-- You don't HAVE to use v-model, but if you don't, then changes
+        -- (like the page hero language button) aren't emitted back out, and
+        -- only changes from outside the component tree (e.g. addBlock,
+        -- toggleLanguage) will work.
+        -->
       <TuiPage v-if="tuiPage" v-model:page="tuiPage" v-model:lang="language" />
       <TuiPage v-if="tuiPage2" v-model:page="tuiPage2" v-model:lang="language" />
     </div>

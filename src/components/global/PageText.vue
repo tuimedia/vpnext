@@ -6,6 +6,7 @@ const props = defineProps<{
   data: TuiPageBlock;
 }>();
 
+// Get the TuiPage utility and use it to calculate the strings to show
 const TuiPage = inject(TuiPageKey) as InjectedTuiPage;
 const strings = TuiPage.translateBlockStrings(props.data);
 </script>
